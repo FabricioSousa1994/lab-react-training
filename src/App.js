@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import IdCard from './components/IdCard.js';
 import Greetings from './components/Greetings';
@@ -7,8 +6,28 @@ import BoxColor from './components/BoxColor';
 import CreditCard from './components/CreditCard';
 import Rating from './components/Rating';
 import DriverCard from './components/DriverCard';
+import LikeButton from './components/LikeButton';
+import ClickablePicture from './components/ClickablePicture';
+import Dice from './components/Dice';
+import Carousel from './components/Caroussel';
+import NumbersTable from './components/NumbersTable';
+import Facebook from './components/Facebook';
+import SignupPage from './components/SignupPage';
+import RGBColorPicker from './components/RGBColorPicker';
+
 
 function App() {
+
+  const images = [
+    '/dice1.png',
+    '/dice2.png',
+    '/dice3.png',
+    '/dice4.png',
+    '/dice5.png',
+    '/dice6.png',
+  ];
+  const empty = '/dice-empty.png';
+
   return (
     <div className="App">
       <IdCard
@@ -95,6 +114,28 @@ function App() {
           licensePlate: 'BE33ER',
         }}
       />
+
+      <LikeButton/>
+
+      <Dice images={images} empty={empty}/>
+
+
+      <Carousel images={[
+    'https://randomuser.me/api/portraits/women/1.jpg',
+    'https://randomuser.me/api/portraits/men/1.jpg',
+    'https://randomuser.me/api/portraits/women/2.jpg',
+    'https://randomuser.me/api/portraits/men/2.jpg'
+  ]} />
+
+    <ClickablePicture/>
+
+    <NumbersTable limit={12}/>
+
+    <Facebook/>
+
+    <SignupPage/>
+
+    <RGBColorPicker/>
     </div>
   );
 }
